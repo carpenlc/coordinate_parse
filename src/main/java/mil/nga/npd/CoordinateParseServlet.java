@@ -18,55 +18,55 @@ import mil.nga.npd.exceptions.InvalidParameterException;
  */
 public class CoordinateParseServlet extends HttpServlet {
 
-	/**
-	 * Eclipse-generated serialVersionUID
-	 */
-	private static final long serialVersionUID = -2986440321277821374L;
+    /**
+     * Eclipse-generated serialVersionUID
+     */
+    private static final long serialVersionUID = -2986440321277821374L;
 
-	/**
+    /**
      * Default no-arg constructor. 
      */
     public CoordinateParseServlet() { }
-	
-	/**
-	 * Process the incoming HTTP GET request.
-	 * 
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	@SuppressWarnings("unchecked")
-	protected void doGet(
-			HttpServletRequest request, 
-			HttpServletResponse response) 
-					throws ServletException, IOException {
-		
-		try {
-			String responseStr = new RESTFilter.RESTFilterBuilder()
-					.withParameterMap(request.getParameterMap())
-					.build()
-					.translate();
-			response.getWriter().println(responseStr);
-		}
-		catch (InternalServerErrorException ise) {
-			// Sends an HTTP 500 error back to the caller.
-			throw new ServletException(ise.getMessage());
-		}
-		catch (InvalidParameterException ipe) {
-			// Sends an HTTP 400 (bad request) error back to the caller.
-			response.sendError(
-					HttpServletResponse.SC_BAD_REQUEST, 
-					ipe.getMessage());
-		}
-	}
-	
-	/**
-	 * Forward POST request the GET method.
-	 * 
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(
-			HttpServletRequest request, 
-			HttpServletResponse response) 
-					throws ServletException, IOException {
-		doGet(request, response);
-	}
+    
+    /**
+     * Process the incoming HTTP GET request.
+     * 
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    @SuppressWarnings("unchecked")
+    protected void doGet(
+            HttpServletRequest request, 
+            HttpServletResponse response) 
+                    throws ServletException, IOException {
+        
+        try {
+            String responseStr = new RESTFilter.RESTFilterBuilder()
+                    .withParameterMap(request.getParameterMap())
+                    .build()
+                    .translate();
+            response.getWriter().println(responseStr);
+        }
+        catch (InternalServerErrorException ise) {
+            // Sends an HTTP 500 error back to the caller.
+            throw new ServletException(ise.getMessage());
+        }
+        catch (InvalidParameterException ipe) {
+            // Sends an HTTP 400 (bad request) error back to the caller.
+            response.sendError(
+                    HttpServletResponse.SC_BAD_REQUEST, 
+                    ipe.getMessage());
+        }
+    }
+    
+    /**
+     * Forward POST request the GET method.
+     * 
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(
+            HttpServletRequest request, 
+            HttpServletResponse response) 
+                    throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

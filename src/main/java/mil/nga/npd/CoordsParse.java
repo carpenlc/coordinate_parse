@@ -375,10 +375,10 @@ public class CoordsParse {
 
             // If the string starts with two or three zeros assume DMS
             if (blnLat && strUserInput.length() >= 2 && 
-            		strUserInput.substring(0, 2).equals("00")) {
+                    strUserInput.substring(0, 2).equals("00")) {
                 blnDMS = true;
             } else if (blnLat && strUserInput.length() >= 3 && 
-            		strUserInput.substring(0, 3).equals("000")) {
+                    strUserInput.substring(0, 3).equals("000")) {
                 blnDMS = true;
             } else if (!isNumeric(strUserInput)) {
                 blnDMS = true;
