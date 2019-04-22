@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+<table border="1">
+<tr>
+    <th>Input String</th>
+    <th>Lat or Lon</th>
+    <th>Calculated Decimal Degree</th>
+    <th>Error Message</th>
+</tr>
+    
+<tr><td colspan="4">
+<b> Valid Longitudes</b>
+</td></tr>
+<tr><td>W123 01 25.2</td>
+<td>LON</td>
+<td>-123.02366666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>E37 45 59.9</td>
+<td>LON</td>
+<td>37.76663888888889</td>
+<td>&nbsp;</td></tr>
+<tr><td>W1 8 0.1</td>
+<td>LON</td>
+<td>-1.133361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123 01 25.2W</td>
+<td>LON</td>
+<td>-123.02366666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>179 59 59.999E</td>
+<td>LON</td>
+<td>179.9999997222222</td>
+<td>&nbsp;</td></tr>
+<tr><td>0 0 0.00000W</td>
+<td>LON</td>
+<td>-0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>-123/01/25.2</td>
+<td>LON</td>
+<td>-123.02366666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>1230125.2</td>
+<td>LON</td>
+<td>123.02366666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>+45 00 00-</td>
+<td>LON</td>
+<td>45.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>123.34E</td>
+<td>LON</td>
+<td>123.34</td>
+<td>&nbsp;</td></tr>
+<tr><td>123.34 E</td>
+<td>LON</td>
+<td>123.34</td>
+<td>&nbsp;</td></tr>
+<tr><td>+123-13-45-</td>
+<td>LON</td>
+<td>123.22916666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>123 W01 34</td>
+<td>LON</td>
+<td>-123.0261111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b>Decimal Degrees</b>
+</td></tr>
+<tr><td>133.5</td>
+<td>LON</td>
+<td>133.5</td>
+<td>&nbsp;</td></tr>
+<tr><td>-12.5</td>
+<td>LON</td>
+<td>-12.5</td>
+<td>&nbsp;</td></tr>
+<tr><td>-27.1</td>
+<td>LON</td>
+<td>-27.1</td>
+<td>&nbsp;</td></tr>
+<tr><td>180.0</td>
+<td>LON</td>
+<td>180.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>-180.0</td>
+<td>LON</td>
+<td>-180.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>0.0</td>
+<td>LON</td>
+<td>0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>0</td>
+<td>LON</td>
+<td>0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> Various Delimiters</b>
+</td></tr>
+<tr><td>W123 01 25</td>
+<td>LON</td>
+<td>-123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123 01 25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123-01-25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123/01/25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123\01\25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123:01:25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123)01)25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123(01(25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123_01_25E</td>
+<td>LON</td>
+<td>123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>-123/01/25</td>
+<td>LON</td>
+<td>-123.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>123 / 01 / 59</td>
+<td>LON</td>
+<td>123.03305555555555</td>
+<td>&nbsp;</td></tr>
+<tr><td>123 // 01 // 59</td>
+<td>LON</td>
+<td>123.03305555555555</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> DDMMSS formats</b>
+</td></tr>
+<tr><td>0E</td>
+<td>LON</td>
+<td>0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>13W</td>
+<td>LON</td>
+<td>-13.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>135W</td>
+<td>LON</td>
+<td>-135.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>1356W</td>
+<td>LON</td>
+<td>-13.933333333333334</td>
+<td>&nbsp;</td></tr>
+<tr><td>13551W</td>
+<td>LON</td>
+<td>-135.85</td>
+<td>&nbsp;</td></tr>
+<tr><td>135615W</td>
+<td>LON</td>
+<td>-13.9375</td>
+<td>&nbsp;</td></tr>
+<tr><td>1355153W</td>
+<td>LON</td>
+<td>-135.8647222222222</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> Invalid Longitudes</b>
+</td></tr>
+<tr><td>-180 00 01</td>
+<td>LON</td>
+<td>-1027.0</td>
+<td>Invalid Longitude: must be greater than or equal to -180</td></tr>
+<tr><td>W180 10 10</td>
+<td>LON</td>
+<td>-1027.0</td>
+<td>Invalid Longitude: must be greater than or equal to -180</td></tr>
+<tr><td>W123 01 56e</td>
+<td>LON</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>N12 01 40</td>
+<td>LON</td>
+<td>-1019.0</td>
+<td>Invalid direction indicator for longitude</td></tr>
+<tr><td>23561536W</td>
+<td>LON</td>
+<td>-1009.0</td>
+<td>Invalid Input: Undelimited longitude format must be DDDMMSS.SSSS</td></tr>
+<tr><td>123 / 01 / 89</td>
+<td>LON</td>
+<td>-1014.0</td>
+<td>Invalid second entry (Must be less than 60)</td></tr>
+<tr><td>W123E123W</td>
+<td>LON</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>-123-12-12-234</td>
+<td>LON</td>
+<td>-1007.0</td>
+<td>Delimited input request requires three fields; Degrees, Minutes, and Seconds</td></tr>
+<tr><td colspan="4">
+<b> Valid Latitudes</b>
+</td></tr>
+<tr><td>N23 01 25.2</td>
+<td>LAT</td>
+<td>23.023666666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>S1 1 1.5</td>
+<td>LAT</td>
+<td>-1.0170833333333333</td>
+<td>&nbsp;</td></tr>
+<tr><td>S0 0 59.8</td>
+<td>LAT</td>
+<td>-0.01661111111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23 01 25.2N</td>
+<td>LAT</td>
+<td>23.023666666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>-13 30 30.8</td>
+<td>LAT</td>
+<td>-13.508555555555555</td>
+<td>&nbsp;</td></tr>
+<tr><td>+23/01/25.2</td>
+<td>LAT</td>
+<td>23.023666666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>230125.2</td>
+<td>LAT</td>
+<td>23.023666666666667</td>
+<td>&nbsp;</td></tr>
+<tr><td>+45 00 00-</td>
+<td>LAT</td>
+<td>45.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>9.87 N</td>
+<td>LAT</td>
+<td>9.87</td>
+<td>&nbsp;</td></tr>
+<tr><td>9.87N</td>
+<td>LAT</td>
+<td>9.87</td>
+<td>&nbsp;</td></tr>
+<tr><td>+12-13-45-</td>
+<td>LAT</td>
+<td>12.229166666666666</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> Decimal Degrees</b>
+</td></tr>
+<tr><td>23.5</td>
+<td>LAT</td>
+<td>23.5</td>
+<td>&nbsp;</td></tr>
+<tr><td>-83.5</td>
+<td>LAT</td>
+<td>-83.5</td>
+<td>&nbsp;</td></tr>
+<tr><td>0</td>
+<td>LAT</td>
+<td>0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>-90</td>
+<td>LAT</td>
+<td>-90.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>90</td>
+<td>LAT</td>
+<td>90.0</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> Various Delimiters</b>
+</td></tr>
+<tr><td>N23 01 25</td>
+<td>LAT</td>
+<td>23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23 01 25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23-01-25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23/01/25N</td>
+<td>LAT</td>
+<td>23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23\01\25N</td>
+<td>LAT</td>
+<td>23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23:01:25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23)01)25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23(01(25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23_01_25S</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>-23/01/25</td>
+<td>LAT</td>
+<td>-23.02361111111111</td>
+<td>&nbsp;</td></tr>
+<tr><td>23 / 01 / 59</td>
+<td>LAT</td>
+<td>23.033055555555556</td>
+<td>&nbsp;</td></tr>
+<tr><td>-23 // 01 // 59</td>
+<td>LAT</td>
+<td>-23.033055555555556</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> DDMMSS formats</b>
+</td></tr>
+<tr><td>0N</td>
+<td>LAT</td>
+<td>0.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>13N</td>
+<td>LAT</td>
+<td>13.0</td>
+<td>&nbsp;</td></tr>
+<tr><td>135S</td>
+<td>LAT</td>
+<td>-1.5833333333333335</td>
+<td>&nbsp;</td></tr>
+<tr><td>1356S</td>
+<td>LAT</td>
+<td>-13.933333333333334</td>
+<td>&nbsp;</td></tr>
+<tr><td>13551N</td>
+<td>LAT</td>
+<td>1.5975000000000001</td>
+<td>&nbsp;</td></tr>
+<tr><td>134315N</td>
+<td>LAT</td>
+<td>13.720833333333333</td>
+<td>&nbsp;</td></tr>
+<tr><td colspan="4">
+<b> Invalid Latitudes</b>
+</td></tr>
+<tr><td>-90.01</td>
+<td>LAT</td>
+<td>-1025.0</td>
+<td>Invalid Latitude: must be greater than or equal to -90</td></tr>
+<tr><td>90.1</td>
+<td>LAT</td>
+<td>-1024.0</td>
+<td>Invalid Latitude: must be less than or equal to 90</td></tr>
+<tr><td>-123 n01 34</td>
+<td>LAT</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>N123 01 56S</td>
+<td>LAT</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>W12 01 40</td>
+<td>LAT</td>
+<td>-1018.0</td>
+<td>Invalid direction indicator for latitude</td></tr>
+<tr><td>00000123</td>
+<td>LAT</td>
+<td>-1008.0</td>
+<td>Invalid Input: Undelimited latitude format must be DDMMSS.SSSS</td></tr>
+<tr><td>2356153N</td>
+<td>LAT</td>
+<td>-1008.0</td>
+<td>Invalid Input: Undelimited latitude format must be DDMMSS.SSSS</td></tr>
+<tr><td>23 / 01 / 89</td>
+<td>LAT</td>
+<td>-1014.0</td>
+<td>Invalid second entry (Must be less than 60)</td></tr>
+<tr><td>N23E123N</td>
+<td>LAT</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>-12-12-34-234</td>
+<td>LAT</td>
+<td>-1007.0</td>
+<td>Delimited input request requires three fields; Degrees, Minutes, and Seconds</td></tr>
+<tr><td>z123</td>
+<td>LAT</td>
+<td>-1001.0</td>
+<td>Latitude has an invalid character</td></tr>
+<tr><td>12.34.45</td>
+<td>LAT</td>
+<td>-1003.0</td>
+<td>More than one decimal point</td></tr>
+<tr><td>N180S</td>
+<td>LAT</td>
+<td>-1004.0</td>
+<td>More than one direction indicator</td></tr>
+<tr><td>45 30W15.3</td>
+<td>LAT</td>
+<td>-1018.0</td>
+<td>Invalid direction indicator for latitude</td></tr>
+
+
+
+
+</table>  
+  </body>
+</html>

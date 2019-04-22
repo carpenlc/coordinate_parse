@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="mil:nga:coordinate_parse"
+  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="mil:nga:coordinate_parse"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:nga="http://www.geoint.nga.ic.gov"
+  name="CoordinateParseService">
+  <wsdl:documentation>
+    <tns:nga_resource>./nga_resource.xml</tns:nga_resource>
+    <tns:description_document>./description_document.html</tns:description_document>    
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import
+				namespace="mil:nga:coordinate_parse"
+				schemaLocation="coordinate_parse_service.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getErrorMessageMsg">
+    <wsdl:part name="parameters" element="tns:GetErrorMessage"/>
+  </wsdl:message>
+  <wsdl:message name="getErrorMessageResponseMsg">
+    <wsdl:part name="result" element="tns:GetErrorMessageResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseCoordPairMsg">
+    <wsdl:part name="parameters" element="tns:ParseCoordPair"/>
+  </wsdl:message>
+  <wsdl:message name="parseCoordPairResponseMsg">
+    <wsdl:part name="result" element="tns:ParseCoordPairResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseCoordPairsMsg">
+    <wsdl:part name="parameters" element="tns:ParseCoordPairs"/>
+  </wsdl:message>
+  <wsdl:message name="parseCoordPairsResponseMsg">
+    <wsdl:part name="result" element="tns:ParseCoordPairsResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseLatitudeMsg">
+    <wsdl:part name="parameters" element="tns:ParseLatitude"/>
+  </wsdl:message>
+  <wsdl:message name="parseLatitudeResponseMsg">
+    <wsdl:part name="result" element="tns:ParseLatitudeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseLatitudesMsg">
+    <wsdl:part name="parameters" element="tns:ParseLatitudes"/>
+  </wsdl:message>
+  <wsdl:message name="parseLatitudesResponseMsg">
+    <wsdl:part name="result" element="tns:ParseLatitudesResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseLongitudeMsg">
+    <wsdl:part name="parameters" element="tns:ParseLongitude"/>
+  </wsdl:message>
+  <wsdl:message name="parseLongitudeResponseMsg">
+    <wsdl:part name="result" element="tns:ParseLongitudeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="parseLongitudesMsg">
+    <wsdl:part name="parameters" element="tns:ParseLongitudes"/>
+  </wsdl:message>
+  <wsdl:message name="parseLongitudesResponseMsg">
+    <wsdl:part name="result" element="tns:ParseLongitudesResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="CoordinateParse">
+    <wsdl:operation name="getErrorMessage">
+      <wsdl:input message="tns:getErrorMessageMsg"/>
+      <wsdl:output message="tns:getErrorMessageResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseCoordPair">
+      <wsdl:input message="tns:parseCoordPairMsg"/>
+      <wsdl:output message="tns:parseCoordPairResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseCoordPairs">
+      <wsdl:input message="tns:parseCoordPairsMsg"/>
+      <wsdl:output message="tns:parseCoordPairsResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseLatitude">
+      <wsdl:input message="tns:parseLatitudeMsg"/>
+      <wsdl:output message="tns:parseLatitudeResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseLatitudes">
+      <wsdl:input message="tns:parseLatitudesMsg"/>
+      <wsdl:output message="tns:parseLatitudesResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseLongitude">
+      <wsdl:input message="tns:parseLongitudeMsg"/>
+      <wsdl:output message="tns:parseLongitudeResponseMsg"/>
+    </wsdl:operation>
+    <wsdl:operation name="parseLongitudes">
+      <wsdl:input message="tns:parseLongitudesMsg"/>
+      <wsdl:output message="tns:parseLongitudesResponseMsg"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CoordinateParseServicePortBinding" type="tns:CoordinateParse">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="getErrorMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseCoordPair">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseCoordPairs">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseLatitude">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseLatitudes">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseLongitude">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseLongitudes">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="coordinate_parse_service">
+    <wsdl:port name="CoordinateParseServicePort" binding="tns:CoordinateParseServicePortBinding">
+      <soap:address location="PUT ACTUAL ADDRESS HERE"
+				xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+				xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

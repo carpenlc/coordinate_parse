@@ -1,0 +1,17 @@
+<!--vv  footer vv-->
+<map id="bot-map1" name="bot-map1">
+	<area shape="poly" coords="113,0, 143,0, 143,15, 113,15" href="https://www.geointel.nga.mil" alt="NGA Home" />
+</map>
+<table width="100%" border="0" style="min-width:1002px;" cellpadding="0" cellspacing="0" summary="container for NGA footer">
+	<tr>
+		<td bgcolor="black" valign="top"><img src="icons/agency-footer.gif" usemap="#bot-map1" alt="NGA Footer" border="0" /></td>
+		<td bgcolor="black" width="100%">
+			<div id="footer-links">&nbsp;&nbsp;&nbsp;&nbsp;
+				<!--<a href="https://search.nga.mil">Search</a>&nbsp;&#183;&nbsp;-->
+				<a href="https://www.geointel.nga.mil/hp/html/help.html">Help</a>&nbsp;&#183;&nbsp;	
+				<a href="https://www.geointel.nga.mil/cgi-bin/feedback.cgi?to=EnterpriseServiceCenter@nga.mil">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+		</td>
+	</tr>
+</table>
+<!--^^  footer ^^-->

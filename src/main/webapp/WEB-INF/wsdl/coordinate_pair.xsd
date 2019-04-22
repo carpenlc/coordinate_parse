@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema version="1.0" targetNamespace="mil:nga:coordinate_pair"
+    xmlns:tns="mil:nga:coordinate_pair" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  
+  
+  <xsd:complexType name="CoordinatePairString">
+    <xsd:all>
+      <xsd:element name="longitude" type="xsd:string" nillable="true"/>
+      <xsd:element name="latitude" type="xsd:string" nillable="true"/>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="CoordinatePair">
+    <xsd:all>
+      <xsd:element name="longitude" type="xsd:double"/>
+      <xsd:element name="latitude" type="xsd:double"/>
+    </xsd:all>
+  </xsd:complexType>
+  
+
+</xsd:schema>

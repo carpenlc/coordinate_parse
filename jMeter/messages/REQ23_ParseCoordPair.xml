@@ -1,0 +1,1 @@
+<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns3:ParseCoordPair xmlns:ns1="urn:us:gov:ic:ism:v2" xmlns:ns3="mil:nga:coordinate_parse"><security ns1:ownerProducer="USA" ns1:classification="U"/><coordinatePairString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/></ns3:ParseCoordPair></S:Body></S:Envelope>

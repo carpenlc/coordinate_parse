@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xsd:schema version="1.0" targetNamespace="mil:nga:coordinate_parse"
+    xmlns:tns="mil:nga:coordinate_parse"
+    xmlns:cpr="mil:nga:coordinate_pair"    
+	  xmlns:sec="mil:nga:security"     
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:import namespace="mil:nga:security"
+          schemaLocation="security.xsd">
+  </xsd:import>
+
+  <xsd:import namespace="mil:nga:coordinate_pair" 
+          schemaLocation="coordinate_pair.xsd">
+  </xsd:import>
+
+  <xsd:complexType name="GetErrorMessage">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="errorNum" minOccurs="0" type="xsd:double"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="GetErrorMessageResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="errorMessage" minOccurs="1" maxOccurs="1" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseCoordPair">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="coordinatePairString" minOccurs="0" type="cpr:CoordinatePairString" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseCoordPairResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="coordinatePair" type="cpr:CoordinatePair" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseCoordPairs">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="coordinatePairStrings" minOccurs="0" maxOccurs="unbounded" type="cpr:CoordinatePairString" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseCoordPairsResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="coordinatePairs" minOccurs="0" maxOccurs="unbounded" type="cpr:CoordinatePair" nillable="true" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLatitude">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="latitude" minOccurs="0" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLatitudeResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="latitude" type="xsd:double" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLatitudes">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="latitudes" minOccurs="0" maxOccurs="unbounded" type="xsd:string"  />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLatitudesResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="latitudes" minOccurs="0" maxOccurs="unbounded" type="xsd:double" nillable="true" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLongitude">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="longitude" minOccurs="0" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLongitudeResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="longitude" type="xsd:double" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLongitudes">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="0" type="sec:SecurityElement" />
+      <xsd:element name="longitudes" minOccurs="0" maxOccurs="unbounded" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:complexType name="ParseLongitudesResponse">
+    <xsd:sequence>
+      <xsd:element name="security" minOccurs="1" maxOccurs="1" type="sec:SecurityElement" />
+      <xsd:element name="longitudes" minOccurs="0" maxOccurs="unbounded" type="xsd:double" nillable="true"/>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  <xsd:element name="nga_resource" type="xsd:string" />
+  <xsd:element name="description_document" type="xsd:string" />
+
+  <xsd:element name="GetErrorMessage" type="tns:GetErrorMessage"/>
+  <xsd:element name="GetErrorMessageResponse" type="tns:GetErrorMessageResponse"/>
+  <xsd:element name="ParseCoordPair" type="tns:ParseCoordPair"/>
+  <xsd:element name="ParseCoordPairResponse" type="tns:ParseCoordPairResponse"/>
+  <xsd:element name="ParseCoordPairs" type="tns:ParseCoordPairs"/>
+  <xsd:element name="ParseCoordPairsResponse" type="tns:ParseCoordPairsResponse"/>
+  <xsd:element name="ParseLatitude" type="tns:ParseLatitude"/>
+  <xsd:element name="ParseLatitudeResponse" type="tns:ParseLatitudeResponse"/>
+  <xsd:element name="ParseLatitudes" type="tns:ParseLatitudes"/>
+  <xsd:element name="ParseLatitudesResponse" type="tns:ParseLatitudesResponse"/>
+  <xsd:element name="ParseLongitude" type="tns:ParseLongitude"/>
+  <xsd:element name="ParseLongitudeResponse" type="tns:ParseLongitudeResponse"/>
+  <xsd:element name="ParseLongitudes" type="tns:ParseLongitudes"/>
+  <xsd:element name="ParseLongitudesResponse" type="tns:ParseLongitudesResponse"/>  
+
+</xsd:schema>

@@ -1,0 +1,101 @@
+
+<nga:resource-WSDL 
+   xmlns:ICISM="urn:us:gov:ic:ism:v2" 
+   xmlns:ddms="http://metadata.dod.mil/mdr/ns/DDMS/1.4/" 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:nga="http://www.geoint.nga.ic.gov"   
+   xsi:schemaLocation="http://www.geoint.nga.ic.gov NGA-Resource-WSDL.xsd">
+    <nga:serviceOverview>
+        <ddms:title ICISM:classification="U" ICISM:ownerProducer="USA">CoordinateParseService
+        </ddms:title>
+        <ddms:identifier ddms:qualifier="URN" ddms:value="mil:nga:coordinate_parse"/>
+        <ddms:publisher ICISM:classification="U" ICISM:ownerProducer="USA">
+            <ddms:Organization>
+                <ddms:name>NGA/eGEOINT</ddms:name>
+                <ddms:phone>314-321-5541</ddms:phone>
+                <ddms:email>Jon.R.Kahlo@nga.mil</ddms:email>
+            </ddms:Organization>
+        </ddms:publisher>
+        <nga:serviceDescription>
+          This service can parse a coordinate string with coordinate specified in many different degree minute second (DMS) formats to decimal degrees.
+        </nga:serviceDescription>
+        <ddms:subjectCoverage>
+            <ddms:Subject>
+                <ddms:keyword ddms:value="Coordinate Parse"/>
+                <ddms:category ddms:qualifier="http://www.geoint.nga.ic.gov" ddms:code="eGEOINT" ddms:label="eGEOINT"/>
+            </ddms:Subject>
+        </ddms:subjectCoverage>
+        <nga:dependencies>NONE</nga:dependencies>
+        <nga:serviceRestrictions>NONE</nga:serviceRestrictions>
+        <nga:processingRules>
+          description_document.html
+        </nga:processingRules>
+    </nga:serviceOverview>
+    <nga:serviceTiers>
+        <nga:serviceTier>1</nga:serviceTier>
+    </nga:serviceTiers>
+    <nga:support>
+        <nga:networkSupported>
+            <nga:serviceNetwork>
+                <nga:serviceNetworkName>SIPRNET</nga:serviceNetworkName>
+                <nga:securityMechanism>NONE</nga:securityMechanism>
+                <nga:serviceAccessModel>NONE</nga:serviceAccessModel>
+                <nga:highestClassificationOfDataProduced>
+                    <ddms:security ICISM:classification="U" ICISM:ownerProducer="USA"/>
+                </nga:highestClassificationOfDataProduced>
+                <nga:serviceLevels>
+                    <nga:serviceLevel>1</nga:serviceLevel>
+                </nga:serviceLevels>
+            </nga:serviceNetwork>
+            <nga:serviceNetwork>
+                <nga:serviceNetworkName>JWICS</nga:serviceNetworkName>
+                <nga:securityMechanism>NONE</nga:securityMechanism>
+                <nga:serviceAccessModel>NONE</nga:serviceAccessModel>
+                <nga:highestClassificationOfDataProduced>
+                    <ddms:security ICISM:classification="U" ICISM:ownerProducer="USA"/>
+                </nga:highestClassificationOfDataProduced>
+                <nga:serviceLevels>
+                    <nga:serviceLevel>1</nga:serviceLevel>
+                </nga:serviceLevels>
+            </nga:serviceNetwork>
+        </nga:networkSupported>
+        <nga:escalation>None</nga:escalation>
+        <nga:severity>MODERATE</nga:severity>
+        <nga:resolutionTimeHours>72</nga:resolutionTimeHours>
+        <nga:responseTimeHours>24</nga:responseTimeHours>
+        <nga:supportAvailability>8X5</nga:supportAvailability>
+        <nga:serviceTermination>When outdated</nga:serviceTermination>
+        <nga:discrepancyReportResolution>TBD</nga:discrepancyReportResolution>
+        <nga:consumerCompensation>NONE</nga:consumerCompensation>
+        <nga:disputeResolution>NONE</nga:disputeResolution>
+        <nga:consumerResponsibilities>No Restrictions</nga:consumerResponsibilities>
+        <ddms:creator ICISM:classification="U" ICISM:ownerProducer="USA">
+            <ddms:Service>
+                <ddms:name>CoordinateParseService</ddms:name>
+                <ddms:phone>314-321-5541</ddms:phone>
+                <ddms:email>Jon.R.Kahlo@nga.mil</ddms:email>
+            </ddms:Service>
+        </ddms:creator>
+    </nga:support>
+    <nga:serviceNominalPerformance>
+        <nga:capacityIn_ops>TBD</nga:capacityIn_ops>
+        <nga:capacityIn_concurrentUsers>TBD</nga:capacityIn_concurrentUsers>
+        <nga:serviceLatencyIn_ms>TBD</nga:serviceLatencyIn_ms>
+    </nga:serviceNominalPerformance>
+    <nga:serviceAvailability>
+        <nga:availability>50%</nga:availability>
+        <nga:scheduledDowntime>During approved Authorized Outage Schedule</nga:scheduledDowntime>
+    </nga:serviceAvailability>
+    <nga:versioningApproach>
+        description_document.html
+    </nga:versioningApproach>
+    <nga:operationalStage>DEVELOPMENT</nga:operationalStage>
+    <nga:consumerSatisfaction>TBD</nga:consumerSatisfaction>
+    <!--
+	  Note: The security element used here reflects the highest
+		classification of data available from this source.  This classification
+		may be higher than the classification of the individual data elements
+		ontained in this document.    
+        -->
+    <ddms:security ICISM:classification="U" ICISM:ownerProducer="USA"/>
+</nga:resource-WSDL>

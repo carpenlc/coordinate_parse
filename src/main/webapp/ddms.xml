@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ddms:Resource xmlns:ddms="http://metadata.dod.mil/mdr/ns/DDMS/2.0/"
+               xmlns:ICISM="urn:us:gov:ic:ism:v2"
+               xmlns:ec08="http://www.opengis.net/ec08"
+               xmlns:gml="http://www.opengis.net/gml"
+               xmlns:mdr="http://metadata.dod.mil/"
+               xmlns:sml="http://www.opengis.net/sensorML/1.0.1"
+               xmlns:xlink="http://www.w3.org/1999/xlink"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://metadata.dod.mil/mdr/ns/DDMS/2.0/ http://12.187.20.60/schemas/ddms/2.0-smarts/ns/DDMS/2.0/DDMS-v2_0.xsd">
+  <ddms:identifier ddms:qualifier="CTPID" ddms:value="CoordinateParseService"/>
+  <ddms:identifier ddms:qualifier="NETWORKID" ddms:value=""/>
+  <ddms:title ICISM:classification="U" ICISM:ownerProducer="USA">Coordinate Parse Service</ddms:title>
+  <ddms:subtitle ICISM:classification="U" ICISM:ownerProducer="USA">Version 1.4</ddms:subtitle>
+  <ddms:description ICISM:classification="U" ICISM:ownerProducer="USA">
+    This service can parse a coordinate string with coordinate specified in many different degree minute second (DMS) formats to decimal degrees.
+  </ddms:description>
+  <ddms:language ddms:qualifier="ISO 639-2" ddms:value="eng"/>
+  <ddms:dates ddms:created="2010-09-24" ddms:posted="2010-09-24"/>
+  <ddms:rights/>
+  <ddms:type ddms:qualifier="http://metadata.dod.mil/mdr/ns/CES/DDMS/DC/DCMITYPE/DCMIType.owl#Service" ddms:value="SERVICE"/>
+  <ddms:creator ICISM:classification="U" ICISM:ownerProducer="USA">
+    <ddms:Person>
+      <ddms:name>David</ddms:name>
+      <ddms:surname>Jennings</ddms:surname>
+      <ddms:affiliation>NGA/eGEOINT</ddms:affiliation>
+      <ddms:phone>(636) 321-5472</ddms:phone>
+      <ddms:email>David.L.Jennings.ctr@nga.mil</ddms:email>
+    </ddms:Person>
+  </ddms:creator>
+  <ddms:publisher ICISM:classification="U" ICISM:ownerProducer="USA">
+    <ddms:Organization>
+      <ddms:name>NGA/EGMCW</ddms:name>
+      <ddms:phone>(636) 321-5010</ddms:phone>
+      <ddms:email>Cynthia.A.Kauffmann@nga.mil</ddms:email>
+    </ddms:Organization>
+  </ddms:publisher>
+  <ddms:pointOfContact ICISM:classification="U" ICISM:ownerProducer="USA">
+    <ddms:Person>
+      <ddms:name>Cindy</ddms:name>
+      <ddms:surname>Kauffmann</ddms:surname>
+      <ddms:affiliation>NGA/EGMCW</ddms:affiliation>
+      <ddms:phone>(636) 321-5010</ddms:phone>
+      <ddms:email>Cynthia.A.Kauffmann@nga.mil</ddms:email>
+    </ddms:Person>
+  </ddms:pointOfContact>
+  <ddms:subjectCoverage>
+    <ddms:Subject>
+      <ddms:category ddms:qualifier="GOUSE" ddms:label="Service"/>
+      <ddms:category ddms:qualifier="GOTYPE" ddms:label="SOAP"/>
+      <ddms:category ddms:qualifier="CTP" ddms:label="National Geospatial-Intelligence Agency"/>
+      <ddms:category ddms:qualifier="Categories" ddms:label="Geographic Services"/>
+      <ddms:keyword ddms:value="Decimal Degrees"/>
+      <ddms:keyword ddms:value="Degrees Minutes Seconds"/>
+      <ddms:keyword ddms:value="Coordinate Conversion"/>
+      <ddms:keyword ddms:value="SOAP"/>
+      <ddms:keyword ddms:value="REST"/>
+    </ddms:Subject>
+  </ddms:subjectCoverage>
+  <ddms:virtualCoverage ddms:address="http://12.187.20.60/coordinate_parse/" ddms:protocol="HTML"/>
+  <ddms:virtualCoverage ddms:address="http://12.187.20.60/coordinate_parse/coordinate_parse_service?WSDL" ddms:protocol="SOAP"/>
+  <ddms:virtualCoverage ddms:address="http://12.187.20.60/coordinate_parse/coordinate_parse_servlet" ddms:protocol="REST"/>
+  <ddms:geospatialCoverage>
+    <ddms:GeospatialExtent>
+      <ddms:boundingBox>
+        <ddms:WestBL>-180</ddms:WestBL>
+        <ddms:EastBL>180</ddms:EastBL>
+        <ddms:SouthBL>-90</ddms:SouthBL>
+        <ddms:NorthBL>90</ddms:NorthBL>
+      </ddms:boundingBox>
+    </ddms:GeospatialExtent>
+  </ddms:geospatialCoverage>  
+  <ddms:relatedResources ICISM:ownerProducer="USA" ICISM:classification="U" ddms:direction="outbound" ddms:relationship="Documentation">
+    <ddms:RelatedResource ddms:qualifier="" ddms:value="">
+      <ddms:link xlink:href="http://12.187.20.60/coordinate_parse/coordinate_parse_service/description_document.jsp" xlink:title="Description Document" />
+      <ddms:link xlink:href="http://12.187.20.60/coordinate_parse/coordinate_parse_service/nga_resource.xml" xlink:title="NGA Resource XML" />
+    </ddms:RelatedResource>
+  </ddms:relatedResources>
+  <ddms:relatedResources ICISM:ownerProducer="USA" ICISM:classification="U" ddms:direction="outbound" ddms:relationship="Samples">
+    <ddms:RelatedResource ddms:qualifier="" ddms:value="">
+      <ddms:link xlink:href="http://12.187.20.60/coordinate_parse/coordinate_parse_service/example_restful_calls.jsp" xlink:title="Example RESTful Calls" />
+      <ddms:link xlink:href="http://12.187.20.60/coordinate_parse/coordinate_parse_service/query_form.jsp" xlink:title="Example Query Form" />
+    </ddms:RelatedResource>
+  </ddms:relatedResources>
+  <ddms:security ICISM:ownerProducer="USA" ICISM:classification="U"/>
+</ddms:Resource>
+

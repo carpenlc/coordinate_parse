@@ -1,0 +1,1 @@
+<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns3:ParseLongitudes xmlns:ns1="urn:us:gov:ic:ism:v2" xmlns:ns3="mil:nga:coordinate_parse"><security ns1:ownerProducer="USA" ns1:classification="U"/><longitudes>543423.123W</longitudes><longitudes>222222.123E</longitudes></ns3:ParseLongitudes></S:Body></S:Envelope>

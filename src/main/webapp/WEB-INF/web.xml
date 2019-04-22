@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" 
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                       xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+    <context-param>
+        <param-name>SERVICE_VERSION</param-name>
+        <param-value>CoordinateParseService 1.5</param-value>
+    </context-param>
+    
+    <!-- BEGIN Configuration for servlet -->   
+    <servlet>
+        <servlet-name>CoordinateParseServlet</servlet-name>
+        <servlet-class>mil.nga.npd.CoordinateParseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CoordinateParseServlet</servlet-name>
+        <url-pattern>/coordinate_parse_servlet</url-pattern>
+    </servlet-mapping>    
+    <servlet>
+        <description>Health Check</description>
+        <display-name>HealthCheckResponder</display-name>
+        <servlet-name>HealthCheckResponder</servlet-name>
+        <servlet-class>mil.nga.npd.HealthCheck.HealthCheckResponder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HealthCheckResponder</servlet-name>
+        <url-pattern>/isAlive</url-pattern>
+    </servlet-mapping>     
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        </welcome-file-list>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>405</error-code>
+        <location>/error.jsp</location>
+    </error-page>    
+   <!-- END Configuration Base Web Application -->      
+</web-app>
